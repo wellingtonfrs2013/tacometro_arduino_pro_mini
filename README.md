@@ -1,6 +1,6 @@
 # Tacometro Digital com Arduino Pro Mini
 
-![Tacometro Digital](docs/cover.png)
+![Tacometro Digital](docs/cover2.png)
 
 ---
 
