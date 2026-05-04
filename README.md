@@ -1,42 +1,58 @@
-# Testador de LEDs
+# Tacometro Digital com Arduino Pro Mini
 
-![Testador de LEDs](docs/cover.png)
+![Tacometro Digital](docs/cover.png)
 
 ---
 
 ### Demo em video
 > Clique para assistir no YouTube
 
-[![Demo no YouTube](https://img.youtube.com/vi/y77Y5r5gI3Q/0.jpg)](https://youtube.com/shorts/y77Y5r5gI3Q)
+[![Demo no YouTube](https://img.youtube.com/vi/54jU1fzNsMc/0.jpg)](https://youtube.com/shorts/54jU1fzNsMc)
 
 ---
 
-Projeto simples para resolver um problema real: testar LEDs de forma rapida e pratica, desde LEDs maiores ate SMD pequenos.
+Construi um tacometro digital com Arduino para medir RPM sem contato usando sensor laser. E ideal para testar rotacao de motores, ventiladores e outros equipamentos de forma rapida e segura.
 
-## Proposta
+## Diferenciais
 
-Um testador portatil para bancada que evita ligacoes improvisadas e facilita a validacao rapida de componentes.
-
-- Sem complicacao
-- Sem fonte de bancada
-- Sem risco de queimar LED
+- Medicao sem contato
+- Leitura de RPM em tempo real
+- Projeto compacto e portatil
 
 ## Componentes
 
-- Case impressa em 3D
-- Resistor de 100R
-- Placa perfurada
-- Barra de pinos femea
-- Suporte para pilhas AAA
+- Arduino Pro Mini
+- Sensor laser
+- Modulo laser
+- Display OLED 128x32
+- Botao tatil
+- Bateria 9V
+
+## Pinagem
+
+| Pino | Componente |
+|---|---|
+| D2 | Saida do sensor laser (entrada de interrupcao) |
+| D4 | RESET do display OLED |
+| A4 (SDA) | Dados I2C do OLED |
+| A5 (SCL) | Clock I2C do OLED |
+| VCC/GND | Alimentacao dos modulos |
+
+Observacao: o botao tatil faz parte do hardware do projeto, mas nao e utilizado no firmware atual.
+
+## Arquivo 3D
+
+- https://www.thingiverse.com/thing:4152617
 
 ## Como usar
 
-1. Insira as pilhas no suporte.
-2. Conecte o LED nos pinos de teste respeitando polaridade.
-3. Verifique imediatamente se o LED acende.
+1. Ligue o circuito e alinhe o sensor laser ao alvo.
+2. Direcione o feixe para a area de leitura da rotacao.
+3. Veja o valor de RPM no display OLED.
 
-## Beneficios
+## Build e Upload
 
-- Agilidade para testes em manutencao e montagem.
-- Portabilidade para uso em qualquer bancada.
-- Custo baixo e montagem simples.
+```bash
+pio run
+pio run --target upload
+```
